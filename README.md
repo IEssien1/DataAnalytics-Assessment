@@ -55,19 +55,19 @@ This allows the operations team to easily identify and flag dormant accounts for
 
 **Approach:**
   1. Created a CTE that joins users_customuser and savings_savingsaccount to calculate:
+
+     a. Account tenure in months (tenure_months)
+
+     b. Total transaction value per customer
+
+     c. Average profit per transaction (assumed at 0.1%)
+    
+  3. In the final query:
+
+     a. Calculated CLV
      
-    a. Account tenure in months (tenure_months)
-    
-    b. Total transaction value per customer
-    
-    c. Average profit per transaction (assumed at 0.1%)
-    
-  2. In the final query:
+     b. Selected customer_id, name, tenure_months, total_transactions, and estimated_clv.
      
-    a. Calculated CLV 
-    
-    b. Selected customer_id, name, tenure_months, total_transactions, and estimated_clv.
-    
-    c. Ordered results by estimated CLV in descending order.
+     c. Ordered results by estimated CLV in descending order.
 
 This approach provides the marketing team with insights into the most valuable customers based on historical data.
