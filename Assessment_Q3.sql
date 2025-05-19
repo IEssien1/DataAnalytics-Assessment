@@ -17,7 +17,7 @@ JOIN
 	ON savings.plan_id = plans.id
 WHERE
 	(plans.is_a_fund = 1 OR plans.is_regular_savings = 1)
-    AND savings.confirmed_amount > 0 -- accounts with no inflows
+    AND savings.confirmed_amount > 0 -- accounts once active
 GROUP BY 
 	plans.id, plans.owner_id
 HAVING 
