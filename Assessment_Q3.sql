@@ -5,7 +5,7 @@ SELECT
     plans.owner_id AS owner_id,
 	-- identify account type
     CASE 
-		WHEN plans.is_regular_savings = 1 THEN 'Savings'
+	WHEN plans.is_regular_savings = 1 THEN 'Savings'
         WHEN plans.is_a_fund = 1 THEN 'Investment'
 	END AS type,
     DATE(MAX(savings.transaction_date)) AS last_transaction_date,
